@@ -1,0 +1,22 @@
+.album {
+  padding: 5rem 0;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.card-img-top {
+  height: 350px; /* Ajusta la altura de la imagen según sea necesario */
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
