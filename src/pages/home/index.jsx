@@ -1,8 +1,6 @@
 import "./home.css";
-import cheese from "../../assets/cheese.jpg";
 import { useNavigate } from "react-router-dom";
 import {Latestvideos} from "../../components/latestvideos";
-import {Footer} from "../../common/footer";
 
 export const HomePage = () => {
     const navigate = useNavigate();
