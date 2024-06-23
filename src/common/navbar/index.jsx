@@ -1,9 +1,18 @@
 import React from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import Logo from '../../assets/Logo.png';
+import {Button} from "@mui/material";
 
 export const Navbar = () => {
     const navigate = useNavigate();
+    const {state}=useLocation();
+    const onLogout=()=>{
+        navigate('/login',{
+            replace:true
+        })
+    }
+    console.log(state)
+
     return (
 
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -27,19 +36,29 @@ export const Navbar = () => {
                             <Link className="nav-link" to="/services">Servicios</Link>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
-                        <button
-                            className="btn btn-info"
-                            type="submit"
-                            onClick={() => navigate('form')}
 
-                        >Regístrate</button>
-                        <button
-                            className="btn btn-success"
-                            type="submit"
-                            onClick={() => navigate('login')}
-                        >Iniciar Sesión</button>
-                    </form>
+                    {state?.logged? (
+                        <div className={"user"}>
+                            <span className={"username"}>Bienvenido {state?.name}</span>
+                            <button className={"btn-logout"} onClick={onLogout}>Cerrar sesión</button>
+                        </div>
+                    ): (
+                        <form className="d-flex" role="search">
+                            <button
+                                className="btn btn-info"
+                                type="submit"
+                                onClick={() => navigate('/form')}
+
+                            >Regístrate
+                            </button>
+                            <button
+                                className="btn btn-success"
+                                type="submit"
+                                onClick={() => navigate('/login')}
+                            >Iniciar Sesión
+                            </button>
+                        </form>
+                    )}
                 </div>
             </div>
         </nav>
