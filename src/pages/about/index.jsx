@@ -15,7 +15,11 @@ export const AboutPage = () => {
                 </div>
                 <div className="col-lg-6 text-center">
                     <h1 className="display-5 fw-bold lh-1 mb-3">¿Quiénes somos?</h1>
-                    <p className="lead">parrafo</p>
+                    <p className="lead">
+                        Mind Well es un proyecto dedicado a proporcionar recursos esenciales y apoyo continuo a aquellos que enfrentan desafíos relacionados con la salud mental, centrándose específicamente en la depresión y la ansiedad. A través de nuestra plataforma web, nuestro objetivo principal es ofrecer orientación, educación y una red de apoyo sólida para mejorar la calidad de vida de las personas.
+
+                        Somos estudiantes que no sabemos nada de medicina ni somos psicólogos; solo queremos dar orientación a las personas que lo necesiten. Con Mind Well, los usuarios tendrán acceso a herramientas y recursos diseñados para fortalecer su inteligencia emocional, permitiéndoles manejar mejor sus emociones, establecer relaciones más saludables y enfrentar los desafíos diarios con mayor resiliencia. Creemos firmemente que, al mejorar la inteligencia emocional, no solo se mejora la salud mental, sino también la capacidad de vivir una vida más plena y satisfactoria.
+                    </p>
                 </div>
             </div>
         </div>

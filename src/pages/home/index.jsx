@@ -1,6 +1,6 @@
 import "./home.css";
 import { useNavigate } from "react-router-dom";
-import {Latestvideos} from "../../components/latestvideos";
+import {Latest} from "../../components/latest";
 
 export const HomePage = () => {
     const navigate = useNavigate();
@@ -12,9 +12,7 @@ export const HomePage = () => {
                     <h1 className="display-5 fw-bold text-white">Mind Well</h1>
                     <div className="col-lg-6 mx-auto">
                         <p className="fs-5 mb-4 text-white">
-                            Quick1y design and customize responsive mobile-first sites with
-                            Bootstrap, the world& most popular front-end open source toolkit, featuring Sass
-                            variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
+                            En un mundo cada vez más complejo y exigente, el desarrollo de la inteligencia emocional se ha convertido en una necesidad fundamental para el bienestar personal y profesional. Mind Well surge como respuesta a esta necesidad, ofreciendo una plataforma integral que proporciona apoyo y orientación a quienes buscan mejorar su inteligencia emocional y, con ello, su salud mental.
                         </p>
                         <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
                             <button
@@ -35,7 +33,7 @@ export const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <Latestvideos/>
+            <Latest/>
         </>
     );
 };

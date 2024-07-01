@@ -2,19 +2,18 @@ import React from "react";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import Logo from '../../assets/Logo.png';
 import {Button} from "@mui/material";
+import './index.css';
 
 export const Navbar = () => {
     const navigate = useNavigate();
-    const {state}=useLocation();
-    const onLogout=()=>{
-        navigate('/login',{
-            replace:true
+    const {state} = useLocation();
+    const onLogout = () => {
+        navigate('/login', {
+            replace: true
         })
     }
-    console.log(state)
 
     return (
-
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
@@ -37,26 +36,34 @@ export const Navbar = () => {
                         </li>
                     </ul>
 
-                    {state?.logged? (
-                        <div className={"user"}>
-                            <span className={"username"}>Bienvenido {state?.name}</span>
-                            <button className={"btn-logout"} onClick={onLogout}>Cerrar sesión</button>
+                    {state?.logged ? (
+                        <div className="user">
+                            <span className="username">Bienvenido {state?.name}</span>
+                            <Button
+                                variant="contained"
+                                color="secondary"
+                                onClick={onLogout}
+                            >
+                                Cerrar sesión
+                            </Button>
                         </div>
-                    ): (
+                    ) : (
                         <form className="d-flex" role="search">
-                            <button
-                                className="btn btn-info"
-                                type="submit"
+                            <Button
+                                variant="contained"
+                                color="info"
                                 onClick={() => navigate('/form')}
-
-                            >Regístrate
-                            </button>
-                            <button
-                                className="btn btn-success"
-                                type="submit"
+                            >
+                                Regístrate
+                            </Button>
+                            <Button
+                                variant="contained"
+                                color="success"
                                 onClick={() => navigate('/login')}
-                            >Iniciar Sesión
-                            </button>
+                                style={{ marginLeft: '0.5rem' }}
+                            >
+                                Iniciar Sesión
+                            </Button>
                         </form>
                     )}
                 </div>
@@ -64,3 +71,4 @@ export const Navbar = () => {
         </nav>
     );
 }
+

@@ -1,13 +1,15 @@
 import React from 'react';
-import './index.css'; // Asegúrate de tener este archivo para los estilos
+import './index.css';
+import {useNavigate} from "react-router-dom"; // Asegúrate de tener este archivo para los estilos
 
-export const Latestvideos = () => {
+export const Latest = () => {
     const lineStyle = {
         borderTop: '3px solid #b0c4de',
         width: '100%',
         marginTop: '10px',
         marginBottom: '20px'
     };
+    const navigate= useNavigate()
 
     return (
         <div className="album py-5 bg-light">
@@ -25,7 +27,11 @@ export const Latestvideos = () => {
                                     De qué manera afectan las emociones en el día a día
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group my-3">
-                                            <button type="button" className="btn btn-outline-primary">Leer más</button>
+                                            <button
+                                                type="button"
+                                                className="btn btn-outline-primary"
+                                                onClick={() => navigate('/')}>Leer más</button>
+
                                         </div>
                                     </div>
                                 </p>
