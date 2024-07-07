@@ -21,16 +21,16 @@ export const Latest = () => {
                         <div className="card shadow-sm">
                             <img
                                 src={"https://images.unsplash.com/photo-1584293002515-551ddc750ecb?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-                                className="card-img-top" />
+                                className="card-img-top"  alt='Imagen de migraña'/>
                             <div className="card-body">
                                 <p className="card-text">
-                                    De qué manera afectan las emociones en el día a día
+                                    ¿Cómo afectan las emociones a nuestra salud?
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="btn-group my-3">
                                             <button
                                                 type="button"
                                                 className="btn btn-outline-primary"
-                                                onClick={() => navigate('/')}>Leer más</button>
+                                                onClick={() => navigate('/feelings-today')}>Leer más</button>
 
                                         </div>
                                     </div>
@@ -42,7 +42,7 @@ export const Latest = () => {
                         <div className="card shadow-sm">
                             <img
                                 src={"https://images.unsplash.com/photo-1584293002515-551ddc750ecb?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-                                className="card-img-top" />
+                                className="card-img-top" alt='Imagen relacionada a las emociones'/>
                             <div className="card-body">
                                 <p className="card-text">
                                     De qué manera afectan las emociones en el día a día
@@ -59,7 +59,7 @@ export const Latest = () => {
                         <div className="card shadow-sm">
                             <img
                                 src={"https://images.unsplash.com/photo-1584293002515-551ddc750ecb?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-                                className="card-img-top" />
+                                className="card-img-top" alt='Imagen relacionada' />
                             <div className="card-body">
                                 <p className="card-text">
                                     De qué manera afectan las emociones en el día a día

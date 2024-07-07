@@ -1,6 +1,7 @@
 import "./home.css";
 import { useNavigate } from "react-router-dom";
 import {Latest} from "../../components/latest";
+import {Carousel} from "../../components/carousel";
 
 export const HomePage = () => {
     const navigate = useNavigate();
@@ -34,6 +35,7 @@ export const HomePage = () => {
                 </div>
             </div>
             <Latest/>
+            <Carousel/>
         </>
     );
 };

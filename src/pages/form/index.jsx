@@ -1,5 +1,5 @@
 import { useForm } from "../../hooks/useForm";
-import './index.css';  // Importa el archivo CSS
+import './index.css';
 
 export const FormPage = () => {
     const { name, email, password, confirmPassword, onInputChange, onResetForm } = useForm({

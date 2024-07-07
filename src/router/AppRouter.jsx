@@ -8,6 +8,7 @@ import {ServicesPage} from "../pages/services";
 import {Footer} from "../common/footer";
 import {Dashpage} from "../pages/dashpage";
 import {PrivateRoute} from "./privateroute";
+import {TodayPage} from "../pages/info/feelings/today";
 
 export const AppRouter = () => {
   return <>
@@ -17,6 +18,7 @@ export const AppRouter = () => {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path={"/services"} element={<ServicesPage/>}/>
+                <Route path={"/feelings-today"} element={<TodayPage/>}/>
                 <Route path={"/dashboard"} element={
                     <PrivateRoute>
                         <Dashpage/>

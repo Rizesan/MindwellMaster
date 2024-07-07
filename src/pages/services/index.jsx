@@ -4,7 +4,7 @@ export const ServicesPage = () => {
     const navigate = useNavigate();
   return (
       <div className="container px-4 py-5" id="featured-3">
-          <h1 className="pb-2 border-bottom text-lg-center">Catalogo de doctores</h1>
+          <h1 className="pb-2 border-bottom text-lg-center">Asociaciones</h1>
           <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
               <div className="feature col">
                   <div
@@ -15,7 +15,7 @@ export const ServicesPage = () => {
                       </svg>
                       */}
                   </div>
-                  <h3 className="fs-2 text-body-emphasis">Dr. Bramdom</h3>
+                  <h3 className="fs-2 text-body-emphasis">Men's Healt</h3>
                   <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
                       sentence and probably just keep going until we run out of words.</p>
                   <button
