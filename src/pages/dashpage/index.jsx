@@ -1,6 +1,8 @@
 
 export const Dashpage = () => {
   return (
-      <div> akasjl</div>
+      <div>
+        <h1>lakk</h1>
+      </div>
   )
 }

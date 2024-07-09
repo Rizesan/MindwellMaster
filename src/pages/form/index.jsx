@@ -7,9 +7,10 @@ export const FormPage = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [state, setState] = useState(null)
-
+    const navigate = useNavigate(); // Inicializar useNavigate
 
     const handleSubmit = (event) =>{
+
         const  data = {
             email,
             password
@@ -24,6 +25,7 @@ export const FormPage = () => {
                     type:"success",
                     message:"Usuario creado correctamente"
                 })
+                navigate('/');
             })
             .catch((error) => {
                 console.log('Error', error)
@@ -72,7 +74,7 @@ export const FormPage = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             autoComplete="off"
                         />
-                        <label htmlFor="floatingPassword">Password</label>
+                        <label htmlFor="floatingPassword">Contraseña</label>
                     </div>
 
                     <button className="btn btn-primary w-100 py-2" type="submit">Register</button>
