@@ -1,49 +1,51 @@
-import { useForm } from "../../hooks/useForm";
+import axios from 'axios'; // Importar Axios
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 import './index.css';
+import { useState } from "react";
 
 export const FormPage = () => {
-    const { name, email, password, confirmPassword, onInputChange, onResetForm } = useForm({
-        name: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-    });
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [state, setState] = useState(null)
 
-    const onRegister = (e) => {
-        e.preventDefault();
 
-        // Validación adicional si es necesario
-        if (password !== confirmPassword) {
-            alert('Las contraseñas no coinciden');
-            return;
+    const handleSubmit = (event) =>{
+        const  data = {
+            email,
+            password
         }
+        console.log(data)
 
-        // Procesar el registro aquí
-        console.log({ name, email, password });
-
-        onResetForm();
-    };
+        event.preventDefault()
+        axios.post('https://mindwellapi-1.onrender.com/api/v1/users', data)
+            .then((response)=>{
+                console.log('response', response)
+                setState({
+                    type:"success",
+                    message:"Usuario creado correctamente"
+                })
+            })
+            .catch((error) => {
+                console.log('Error', error)
+                setState({
+                    type:"danger",
+                    message:"Usuario no resgistrado"
+                })
+            })
+    }
 
     return (
         <div className="form-background">
             <main className="form-signin">
-                <form onSubmit={onRegister}>
+                <form onSubmit={handleSubmit}>
+                    {
+                        state &&(
+                            <div className={`alert alert-${state.type}`} role="alert">
+                                {state.message}
+                            </div>
+                        )
+                    }
                     <h1 className="h3 mb-3 fw-normal text-center">Registro</h1>
-
-                    <div className="form-floating mb-4">
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="floatingName"
-                            name="name"
-                            placeholder="Nombre"
-                            value={name}
-                            onChange={onInputChange}
-                            required
-                            autoComplete="off"
-                        />
-                        <label htmlFor="floatingName">Nombre</label>
-                    </div>
                     <div className="form-floating mb-4">
                         <input
                             type="email"
@@ -52,7 +54,7 @@ export const FormPage = () => {
                             name="email"
                             placeholder="name@example.com"
                             value={email}
-                            onChange={onInputChange}
+                            onChange={(e) => setEmail(e.target.value)}
                             required
                             autoComplete="off"
                         />
@@ -65,26 +67,12 @@ export const FormPage = () => {
                             id="floatingPassword"
                             name="password"
                             placeholder="Password"
-                            value={password}
-                            onChange={onInputChange}
                             required
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             autoComplete="off"
                         />
                         <label htmlFor="floatingPassword">Password</label>
-                    </div>
-                    <div className="form-floating mb-4">
-                        <input
-                            type="password"
-                            className="form-control"
-                            id="floatingConfirmPassword"
-                            name="confirmPassword"
-                            placeholder="Confirm Password"
-                            value={confirmPassword}
-                            onChange={onInputChange}
-                            required
-                            autoComplete="off"
-                        />
-                        <label htmlFor="floatingConfirmPassword">Confirm Password</label>
                     </div>
 
                     <button className="btn btn-primary w-100 py-2" type="submit">Register</button>
