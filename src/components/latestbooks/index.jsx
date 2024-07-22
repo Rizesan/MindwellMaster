@@ -1,9 +1,18 @@
+import React from "react";
 
 export const Latestbooks = () => {
-  return (
+    const lineStyle = {
+        borderTop: '3px solid #b0c4de',
+        width: '100%',
+        marginTop: '10px',
+        marginBottom: '20px'
+    };
+
+    return (
       <main>
           <div className={"container-lg"}>
               <div className="row mb-2">
+                  <div style={lineStyle}></div>
                   <div className="col-md-6">
                       <div
                           className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">

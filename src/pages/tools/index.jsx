@@ -4,8 +4,8 @@ import {Latestbooks} from "../../components/latestbooks";
 export const ToolsPage = () => {
   return (
       <main>
-          <div>
-              <h1>njkn</h1>
+          <div className={"container-lg text-lg-center"}>
+              <h1 className={" display-5 fst-italic"}>Libros</h1>
 
           </div>
           <Latestbooks/>
