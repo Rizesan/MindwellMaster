@@ -1,0 +1,14 @@
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-custom {
+    max-height: 800px; /* Ajusta este valor según sea necesario */
+    object-fit: cover;
+}
+
+.container-fluid {
+    max-width: 100%; /* Ajusta el ancho máximo del contenedor */
+    margin: 0 auto;
+}
