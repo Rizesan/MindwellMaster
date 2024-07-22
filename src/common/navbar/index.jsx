@@ -1,16 +1,14 @@
 import React from "react";
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from '../../assets/Logo.png';
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 import './index.css';
 
 export const Navbar = () => {
     const navigate = useNavigate();
-    const {state} = useLocation();
+    const { state } = useLocation();
     const onLogout = () => {
-        navigate('/login', {
-            replace: true
-        })
+        navigate('/login', { replace: true });
     }
 
     return (
@@ -74,4 +72,3 @@ export const Navbar = () => {
         </nav>
     );
 }
-

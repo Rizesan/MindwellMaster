@@ -1,6 +1,6 @@
 import "./home.css";
 import { useNavigate } from "react-router-dom";
-import {Latest} from "../../components/latestarticles";
+import {Latest} from "../../components/latest";
 import {Carousel} from "../../components/carousel";
 import {Latestbooks} from "../../components/latestbooks";
 import {LatesTest} from "../../components/latestest";
@@ -39,6 +39,7 @@ export const HomePage = () => {
             <Latest/>
             <Latestbooks/>
             <LatesTest/>
+            <Carousel/>
         </>
     );
 };

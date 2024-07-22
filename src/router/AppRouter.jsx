@@ -12,20 +12,20 @@ import {TodayPage} from "../pages/info/feelings/today";
 import {ToolsPage} from "../pages/tools";
 
 export const AppRouter = () => {
-  return <>
-      <Router>
-          <Navbar/>
-          <Routes>
+    return (
+        <Router>
+            <Navbar/>
+            <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />
-                <Route path={"/services"} element={<ServicesPage/>}/>
-                <Route path={"/feelings-today"} element={<TodayPage/>}/>
-                <Route path={"/dashboard"} element={<Dashpage/>}/>
-              <Route path={"/tools"} element={<ToolsPage/>}/>
-              <Route path="/form" element={<FormPage />} />
-              <Route path="/login" element={<LoginPage />} />
-          </Routes>
-          <Footer/>
-      </Router>
-  </>
-}
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/feelings-today" element={<TodayPage />} />
+                <Route path="/dashboard" element={<Dashpage />} />
+                <Route path="/tools" element={<ToolsPage />} />
+                <Route path="/form" element={<FormPage />} />
+                <Route path="/login" element={<LoginPage />} />
+            </Routes>
+            <Footer/>
+        </Router>
+    );
+};
