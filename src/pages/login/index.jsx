@@ -33,61 +33,62 @@ export const LoginPage = () => {
     };
 
     return (
-        <div>
+        <div className={"login-background"}>
             <main className="form-signin w-100 m-auto">
-                <form onSubmit={handleSubmit}>
-                    {state && (
-                        <div className={`alert alert-${state.type}`} role="alert">
-                            {state.message}
+                <div >
+                    <form onSubmit={handleSubmit}>
+                        {state && (
+                            <div className={`alert alert-${state.type}`} role="alert">
+                                {state.message}
+                            </div>
+                        )}
+                        <h1 className="h3 mb-3 fw-normal">Inicia Sesión</h1>
+
+                        <div className="form-floating">
+                            <input
+                                type="email"
+                                className="form-control"
+                                id="floatingInput"
+                                placeholder="name@example.com"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                                autoComplete="off"
+                            />
+                            <label htmlFor="floatingInput">Correo</label>
                         </div>
-                    )}
-                    <h1 className="h3 mb-3 fw-normal">Registrate</h1>
+                        <div className="form-floating">
+                            <input
+                                type="password"
+                                className="form-control"
+                                id="floatingPassword"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                                autoComplete="off"
+                            />
+                            <label htmlFor="floatingPassword">Contraseña</label>
+                        </div>
 
-                    <div className="form-floating">
-                        <input
-                            type="email"
-                            className="form-control"
-                            id="floatingInput"
-                            placeholder="name@example.com"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                            autoComplete="off"
-                        />
-                        <label htmlFor="floatingInput">Correo</label>
-                    </div>
-                    <div className="form-floating">
-                        <input
-                            type="password"
-                            className="form-control"
-                            id="floatingPassword"
-                            placeholder="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                            autoComplete="off"
-                        />
-                        <label htmlFor="floatingPassword">Contraseña</label>
-                    </div>
-
-                    <div className="form-check text-start my-3">
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value="remember-me"
-                            id="flexCheckDefault"
-                        />
-                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                            Recuérdame
-                        </label>
-                    </div>
-                    <button className="btn btn-primary w-100 py-2" type="submit">Entra</button>
-                </form>
+                        <div className="form-check text-start my-3">
+                            <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value="remember-me"
+                                id="flexCheckDefault"
+                            />
+                            <label className="form-check-label" htmlFor="flexCheckDefault">
+                                Recuérdame
+                            </label>
+                        </div>
+                        <button className="btn btn-primary w-100 py-2" type="submit">Entra</button>
+                    </form>
+                </div>
             </main>
         </div>
     );
 };
-
 
 
 {/*
@@ -115,4 +116,5 @@ export const LoginPage = () => {
           </form>
         </main>
       </div>
-*/}
+*/
+}

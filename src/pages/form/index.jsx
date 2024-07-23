@@ -25,7 +25,7 @@ export const FormPage = () => {
                     type:"success",
                     message:"Usuario creado correctamente"
                 })
-                navigate('/');
+                navigate('/profile');
             })
             .catch((error) => {
                 console.log('Error', error)
@@ -60,7 +60,7 @@ export const FormPage = () => {
                             required
                             autoComplete="off"
                         />
-                        <label htmlFor="floatingEmail">Email address</label>
+                        <label htmlFor="floatingEmail">Correo</label>
                     </div>
                     <div className="form-floating mb-4">
                         <input
@@ -77,7 +77,7 @@ export const FormPage = () => {
                         <label htmlFor="floatingPassword">Contraseña</label>
                     </div>
 
-                    <button className="btn btn-primary w-100 py-2" type="submit">Register</button>
+                    <button className="btn btn-primary w-100 py-2" type="submit">Regístrate</button>
                 </form>
             </main>
         </div>

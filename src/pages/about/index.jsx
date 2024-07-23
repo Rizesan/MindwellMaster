@@ -16,9 +16,12 @@ export const AboutPage = () => {
                 <div className="col-lg-6 text-center">
                     <h1 className="display-5 fw-bold lh-1 mb-3">¿Quiénes somos?</h1>
                     <p className="lead justify-content-lg-around">
-                        Mind Well es un proyecto dedicado a proporcionar recursos esenciales y apoyo continuo a aquellos que enfrentan desafíos relacionados con la salud mental, centrándose específicamente en la depresión y la ansiedad. A través de nuestra plataforma web, nuestro objetivo principal es ofrecer orientación, educación y una red de apoyo sólida para mejorar la calidad de vida de las personas.
+                        Somos Mind Well, un equipo de estudiantes dedicados a proporcionar orientación y recursos prácticos para fortalecer la inteligencia emocional, creyendo firmemente que una mejor gestión emocional puede llevar a una vida más plena y satisfactoria.
 
-                        Somos estudiantes que no sabemos nada de medicina ni somos psicólogos; solo queremos dar orientación a las personas que lo necesiten. Con Mind Well, los usuarios tendrán acceso a herramientas y recursos diseñados para fortalecer su inteligencia emocional, permitiéndoles manejar mejor sus emociones, establecer relaciones más saludables y enfrentar los desafíos diarios con mayor resiliencia. Creemos firmemente que, al mejorar la inteligencia emocional, no solo se mejora la salud mental, sino también la capacidad de vivir una vida más plena y satisfactoria.
+                    </p>
+                    <p className="lead justify-content-lg-around card-text">
+                        En Mind Well, nuestro objetivo es ofrecer herramientas y apoyo accesibles a quienes enfrentan desafíos relacionados con la depresión y la ansiedad. Nos enfocamos en la educación y el desarrollo de habilidades emocionales para que nuestros usuarios puedan manejar mejor sus emociones, establecer relaciones más saludables y enfrentar los desafíos diarios con mayor resiliencia.
+
                     </p>
                 </div>
             </div>

@@ -6,34 +6,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem; /* Añadido para dar más espacio alrededor del formulario */
+    padding: 2rem;
 }
 
 .form-signin {
-    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
-    padding: 3rem; /* Aumentado para más espacio interior */
-    border-radius: 10px; /* Ajustado para una esquina más suave */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Ajustado para una sombra más pronunciada */
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 700px; /* Aumentado para más ancho máximo */
-    margin: 0 2rem; /* Asegura un mayor margen lateral */
+    max-width: 700px;
+    margin: 0 2rem;
 }
 
 .form-floating {
-    margin-bottom: 2rem; /* Aumentado para más espacio entre los campos */
+    margin-bottom: 2rem;
 }
 
 .form-control {
-    height: calc(3.75rem + 2px); /* Ajustado para más altura */
-    padding: 1.25rem; /* Ajustado para más espacio interior */
-    font-size: 1.1rem; /* Aumentado para mayor tamaño de fuente */
+    height: calc(3.75rem + 2px);
+    padding: 1.25rem;
+    font-size: 1.1rem;
 }
 
 button {
-    font-size: 1.3rem; /* Aumentado para mayor tamaño de fuente */
-    padding: 0.75rem; /* Añadido para más espacio dentro del botón */
+    font-size: 1.3rem;
+    padding: 0.75rem;
 }
 
 h1 {
-    margin-bottom: 2.5rem; /* Ajustado para más espacio debajo del encabezado */
+    margin-bottom: 2.5rem;
 }
