@@ -4,6 +4,7 @@ import {Latest} from "../../components/latest";
 import {Carousel} from "../../components/carousel";
 import {Latestbooks} from "../../components/latestbooks";
 import {LatesTest} from "../../components/latestest";
+import {UpdateProfile} from "../form/formUser";
 
 export const HomePage = () => {
     const navigate = useNavigate();
@@ -39,7 +40,6 @@ export const HomePage = () => {
             <Latest/>
             <Latestbooks/>
             <LatesTest/>
-            <Carousel/>
         </>
     );
 };

@@ -25,7 +25,7 @@ export const FormPage = () => {
                     type:"success",
                     message:"Usuario creado correctamente"
                 })
-                navigate('/profile');
+                navigate('/update-profile');
             })
             .catch((error) => {
                 console.log('Error', error)

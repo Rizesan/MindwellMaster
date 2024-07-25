@@ -1,13 +1,16 @@
 import React from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from '../../assets/Logo.png';
 import { Button } from "@mui/material";
 import './index.css';
 
 export const Navbar = () => {
     const navigate = useNavigate();
-    const { state } = useLocation();
+    const user = localStorage.getItem("user");
+
     const onLogout = () => {
+        localStorage.removeItem("user");
+        localStorage.removeItem("userId");
         navigate('/login', { replace: true });
     }
 
@@ -35,11 +38,16 @@ export const Navbar = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/tools">Herramientas</Link>
                         </li>
-                    </ul>
+                        {user? (
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/profile-edit">Perfil</Link>
+                                </li>
+                            ) : (<></>)
+                        }
 
-                    {state?.logged ? (
+                    </ul>
+                    {user ? (
                         <div className="user">
-                            <span className="username">Bienvenido {state?.name}</span>
                             <Button
                                 variant="contained"
                                 color="secondary"

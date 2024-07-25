@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
+import { auth } from "../../contexts/GlobalContext"
+
 export const LoginPage = () => {
+    const { login } = auth()
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [state, setState] = useState(null);
@@ -16,12 +19,20 @@ export const LoginPage = () => {
 
         axios.post('https://mindwellapi-1.onrender.com/api/v1/auth/login', data)
             .then((response) => {
-                console.log('response', response);
+                const dataResponse = response.data
+                localStorage.setItem("user", JSON.stringify(dataResponse));
+                /*
+                {
+  "email": "john.doe@example.com",
+  "password": "secretpassword"
+}
+                 */
+
                 setState({
                     type: "success",
                     message: "Inicio de sesión exitoso"
                 });
-                navigate('/dashboard');
+                navigate('/profile');
             })
             .catch((error) => {
                 console.log('Error', error);
@@ -53,7 +64,6 @@ export const LoginPage = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
-                                autoComplete="off"
                             />
                             <label htmlFor="floatingInput">Correo</label>
                         </div>
@@ -66,7 +76,6 @@ export const LoginPage = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
-                                autoComplete="off"
                             />
                             <label htmlFor="floatingPassword">Contraseña</label>
                         </div>

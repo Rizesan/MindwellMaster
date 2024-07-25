@@ -1,8 +1,8 @@
 import axios from 'axios'; // Importar Axios
 import { useNavigate } from 'react-router-dom'; // Importar useNavigate
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 
-export const UpdateProfile = ({ id }) => {
+export const Profile = ({ id }) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [bio, setBio] = useState("");
@@ -10,21 +10,43 @@ export const UpdateProfile = ({ id }) => {
     const [state, setState] = useState(null);
     const navigate = useNavigate(); // Inicializar useNavigate
 
+    useEffect(() => {
+        const userContext = JSON.parse(localStorage.getItem("user"));
+
+        axios.get(`https://mindwellapi-1.onrender.com/api/v1/profile/${userContext?.user?.profileId}`, {
+            headers: {
+                'Authorization': `Bearer ${userContext?.token}` // Asegúrate de tener el token definido
+            }
+        })
+            .then((response) => {
+                const dataNow = response.data;
+                setFirstName(dataNow.firstName);
+                setLastName(dataNow.lastName);
+                setBio(dataNow.bio);
+                setAvatarUrl(dataNow.avatarUrl);
+            })
+            .catch((error) => {
+                console.error('Error', error);
+            });
+    }, []);
+
     const handleSubmit = (event) => {
+
         const data = {
             firstName,
             lastName,
             bio,
             avatarUrl
         };
-        const dataUser = JSON.parse(localStorage.getItem(`${id}`))
-        console.log(dataUser)
-        console.log(id)
+        const dataUser = JSON.parse(localStorage.getItem("user"));
 
         event.preventDefault();
-        axios.patch(`https://mindwellapi-1.onrender.com/api/v1/profile/${id}`, data)
+        axios.patch(`https://mindwellapi-1.onrender.com/api/v1/profile/${dataUser?.user?.profileId}`, data, {
+            headers: {
+                'Authorization': `Bearer ${dataUser?.token}` // Asegúrate de tener el token definido
+            }
+        })
             .then((response) => {
-                console.log('response', response);
                 setState({
                     type: "success",
                     message: "Perfil actualizado correctamente"
